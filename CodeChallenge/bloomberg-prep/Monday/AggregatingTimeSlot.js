@@ -131,17 +131,10 @@ function elementInRange(arr, value, start) {
 	}
 }
 
-function swap(arrA, arrB) {
-	let temp = arrA;
-	arrA = arrB;
-	arrB = temp;
-}
-
 function elementsInRangeCombine(arr, element) {
 	let low = 0;
 	let high = arr.length - 1;
 	let value = undefined;
-	let lastIdx = undefined;
 	while (high >= low) {
 		let mid = findMid(low + high);
 		lastIdx = mid;
@@ -216,6 +209,8 @@ function aggregateTimeSlots(calenderEntries) {
 				} else {
 					newArr.push(aggregateTime[j]);
 				}
+			} else {
+				newArr.push(aggregateTime[j]);
 			}
 		}
 		return newArr;
@@ -224,15 +219,35 @@ function aggregateTimeSlots(calenderEntries) {
 	}
 }
 
-console.log(
-	aggregateTimeSlots([
-		["1130", "1400"],
-		["0930", "1100"],
-		["1400", "1430"],
-		["1045", "1200"],
-		["1530", "2300"],
-		["0000", "0001"],
-	])
-);
+const input = [
+	["1130", "1400"],
+	["0930", "1100"],
+	["1400", "1430"],
+	["1045", "1200"],
+	["1530", "2300"],
+	["0000", "0001"],
+];
 
+aggregateTimeSlots(input);
 
+const sortedInput = input.sort();
+
+function aggregateSortedTimeSlots(calenderEntries) {
+	const aggreagateTimes = [];
+	for (let i = 0; i < calenderEntries.length - 1; i++) {
+		if (aggreagateTimes.length === 0) {
+			aggreagateTimes.push(calenderEntries[i]);
+		} else {
+			if (
+				aggreagateTimes[aggreagateTimes.length - 1][1] > calenderEntries[i][0]
+			) {
+				aggreagateTimes[aggreagateTimes.length - 1][1] = calenderEntries[i][1];
+			} else {
+				aggreagateTimes.push(calenderEntries[i]);
+			}
+		}
+	}
+	return aggreagateTimes;
+}
+
+console.log(aggregateSortedTimeSlots(sortedInput));

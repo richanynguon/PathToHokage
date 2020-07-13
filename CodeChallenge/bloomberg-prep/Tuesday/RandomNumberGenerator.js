@@ -1,0 +1,3 @@
+/*
+Create and proof a function that generates random numbers
+*/

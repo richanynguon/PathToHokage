@@ -1,0 +1,56 @@
+﻿Class Number,Title,Link,Status
+6.834,Cognitive Robotics,https://ocw.mit.edu/courses/aeronautics-and-astronautics/16-412j-cognitive-robotics-spring-2016,8
+9.301,Neural Plasticity in Learning and Memory,https://ocw.mit.edu/courses/brain-and-cognitive-sciences/9-301j-neural-plasticity-in-learning-and-development-spring-2002,3
+9.35,Perception,https://ocw.mit.edu/courses/brain-and-cognitive-sciences/9-35-sensation-and-perception-spring-2009,3
+9.46,Neuroscience of Morality (CI-M),https://ocw.mit.edu/courses/brain-and-cognitive-sciences/9-46-neuroscience-of-morality-fall-2017,4
+9.66,Computational Cognitive Science 1,https://ocw.mit.edu/courses/brain-and-cognitive-sciences/9-66j-computational-cognitive-science-fall-2004,6-7
+6.006,Introduction to Algorithms,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/,0
+6.034,Artificial Intelligence,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-034-artificial-intelligence-fall-2010/,0
+6.042,Mathematics for Computer Science,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-spring-2015,0
+6.045,"Automata, Computability, and Complexity",https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-045j-automata-computability-and-complexity-spring-2011,0
+6.046,Design and Analysis of Algorithms,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015,0
+6.241,Dynamic Systems and Control,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-046j-design-and-analysis-of-algorithms-spring-2015,2
+6.231,Dynamic Programming and Reinforcement Learning,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-231-dynamic-programming-and-stochastic-control-fall-2015,2
+6.251,Introduction to Mathematical Programming,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-251j-introduction-to-mathematical-programming-fall-2009,2
+6.263,Data-Communication Networks,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-263j-data-communication-networks-fall-2002,2
+6.336,Introduction to Numerical Simulation,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-336j-introduction-to-numerical-simulation-sma-5211-fall-2003,3
+6.436,Fundamentals of Probability,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-436j-fundamentals-of-probability-fall-2018,4
+6.438,Algorithms for Inference,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-438-algorithms-for-inference-fall-2014,4
+6.441,Information Theory,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-441-information-theory-spring-2010,4
+6.866,Machine Vision,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-801-machine-vision-fall-2004,8
+6.833,The Human Intelligence Enterprise,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-803-the-human-intelligence-enterprise-spring-2006,8
+6.82,Foundations of Program Analysis,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-820-fundamentals-of-program-analysis-fall-2015,8
+6.823,Computer System Architecture,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-823-computer-system-architecture-fall-2005,8
+6.824,Distributed Computer Systems Engineering,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-824-distributed-computer-systems-engineering-spring-2006,8
+6.828,Operating System Engineering,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-828-operating-system-engineering-fall-2012,8
+6.829,Computer Networks,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-829-computer-networks-fall-2002,8
+6.83,Database Systems,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-830-database-systems-fall-2010,8
+6.832,Underactuated Robotics,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-832-underactuated-robotics-spring-2009,3
+6.845,Quantum Complexity Theory,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-845-quantum-complexity-theory-fall-2010,8
+6.849,"Geometric Folding Algorithms: Linkages, Origami, Polyhedra",https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-849-geometric-folding-algorithms-linkages-origami-polyhedra-fall-2012,8
+6.851,Advanced Data Structures,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-851-advanced-data-structures-spring-2012,8
+6.852,Distributed Algorithms,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-852j-distributed-algorithms-fall-2009,8
+6.854,Advanced Algorithms,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-854j-advanced-algorithms-fall-2008,8
+6.856,Randomized Algorithms,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-856j-randomized-algorithms-fall-2002,8
+6.857,Network and Computer Security,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-857-network-and-computer-security-spring-2014,8
+6.858,Computer Systems Security,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-858-computer-systems-security-fall-2014,8
+6.863,Natural Language and the Computer Representation of Knowledge,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-863j-natural-language-and-the-computer-representation-of-knowledge-spring-2003,8
+6.867,Machine Learning,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-867-machine-learning-fall-2006,8
+6.875,Cryptography and Cryptanalysis,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-875-cryptography-and-cryptanalysis-spring-2005,8
+6.876,Advanced Topics in Cryptography,https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-876j-advanced-topics-in-cryptography-spring-2003,8
+24.211,Theory of Knowledge,https://ocw.mit.edu/courses/linguistics-and-philosophy/24-211-theory-of-knowledge-spring-2014,2
+18.03,Differential Equations,https://ocw.mit.edu/courses/mathematics/18-03-differential-equations-spring-2010,0
+18.04,Complex Variables with Applications,https://ocw.mit.edu/courses/mathematics/18-04-complex-variables-with-applications-spring-2018,0
+18.05,Introduction to Probability and Statistics,https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014,0
+18.06,Linear Algebra,https://ocw.mit.edu/courses/mathematics/18-06sc-linear-algebra-fall-2011,0
+18.0851,Computational Science and Engineering I,https://ocw.mit.edu/courses/mathematics/18-085-computational-science-and-engineering-i-fall-2008,0
+18.1001,Real Analysis,https://ocw.mit.edu/courses/mathematics/18-100c-real-analysis-fall-2012,1
+6.337,Introduction to Numerical Methods,https://ocw.mit.edu/courses/mathematics/18-335j-introduction-to-numerical-methods-spring-2019,3
+6.338,Numerical Computing and Interactive Software,https://ocw.mit.edu/courses/mathematics/18-337j-parallel-computing-fall-2011,3
+18.404,Theory of Computation,https://ocw.mit.edu/courses/mathematics/18-404j-theory-of-computation-fall-2006,4
+18.650,Fundamentals of Statistics,https://ocw.mit.edu/courses/mathematics/18-650-statistics-for-applications-fall-2016,6-7
+18.703,Modern Algebra,https://ocw.mit.edu/courses/mathematics/18-703-modern-algebra-spring-2013,6-7
+6.443,Quantum Information Science,https://ocw.mit.edu/courses/media-arts-and-sciences/mas-865j-quantum-information-science-spring-2006,4
+6.265,Discrete Probability and Stochastic Processes,https://ocw.mit.edu/courses/sloan-school-of-management/15-070j-advanced-stochastic-processes-fall-2013,2
+6.252,Nonlinear Optimization,https://ocw.mit.edu/courses/sloan-school-of-management/15-084j-nonlinear-programming-spring-2004,2
+6.255,Optimization Methods,https://ocw.mit.edu/courses/sloan-school-of-management/15-093j-optimization-methods-fall-2009,2

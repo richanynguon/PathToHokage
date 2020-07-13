@@ -1,0 +1,6 @@
+/*
+Given an event taking place in two locations
+one on the east coast and one of the west coast
+how would you distribute attendees of the event between the two locations
+given the price of bringing them to each location
+*/

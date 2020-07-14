@@ -41,9 +41,13 @@ class Graph {
 		return this.vertices[vId];
 	}
 	dfsContainer(sV, dV) {
-		this.paths = [];
-		this.dfs(sV, dV);
-		return this.paths;
+		if (this.vertices[sV] && this.vertices[dV]) {
+			this.paths = [];
+			this.dfs(sV, dV);
+			return this.paths;
+		} else {
+			return "Please input valid vertices";
+		}
 	}
 	dfs(sV, dV, currentPath = new Set(), curr = undefined) {
 		if (curr === undefined) {

@@ -161,15 +161,6 @@ class Node {
 
 
 let g = new WeightedGraph();
-// USD/INR
-// EUR/CAD
-// EUR/USD=>1.2
-// USD/GBP=>0.75
-// GBP/AUD=>1.7
-// AUD/JPY=>90
-// GBP/JPY=>150
-// JPY/INR=>0.6
-
 g.addVertex("EUR");
 g.addVertex("USD");
 g.addVertex("GBP");

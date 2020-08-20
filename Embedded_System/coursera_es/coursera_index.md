@@ -23,8 +23,90 @@
     - Bootloader  
     - Operating Systems  
     - Libraries and Middleware  
-    - Applications  
+    - Applications 
+
+## Workflow  
+- Source Files (*.c/*.h)  
+- Preprocessors  
+- Prepossessed Files (*.i)  
+- Compiler  
+- Assembly Files (*.s)  
+- Assembler  
+- Object Files (*.o)  
+- Linker  
+- Relocatable Files  
+- Locator  
+- Executable 
+ 
+## Tooling  
+- Software  
+    - IDE  
+    - GNU Toolchain  
+        - GNU Debugger  
+        - Binary Utilities  
+            - GNU Size  
+            - NM  
+            - Objdump  
+            - Readelf  
+        - Make  
+    - Version Control  
+        - Concurrent Versions System  
+        - Subversion  
+        - Mercurial  
+        - IBM Rational ClearCase  
+        - Git  
+    - Software requirements  
+    - Environment Information  
+    - Software Build and Release  
+    - Software review  
+    - Testing  
+    - Documentation  
+    - Defect Tracking  
+- Hardware  
+    - Selector Guide  
+    - Data Sheets  
+    - Family Technical Reference Manuals  
+    - Chip Errata  
+
+## Code Design  
+- Tools  
+    - Flow Diagram  
+    - Software Block  
+    - Component Design  
+- Standarization   
+    - Versions of C Standard  
+        - C11  
+        - C99  
+        - C89/C90  
+        - K&R C-Programming  
+- Coding Guideline  
+- Coding Standards  
+- File Structure  
+    - Header File  
+    - Implementation File  
+- Platform  
+    - Native  
+    - Cross  
+- Libraries  
+- Modules  
+
+
+## Hardware Design  
+- Specification of Chipset  
+    - Word size  
+    - number of registers  
+    - Flash/RAM sizes  
+    - Branch Prediction Support  
+    - Instruction/Data Cache Support  
+    - Floating Point Arithmetic Support    
+    - DMA Support  
 - Memory  
+    - High Capacity  
+    - Low latency  
+    - Low power  
+    - High Reliability  
+
+# Memory
     - Characteristics  
         - Capacity  
         - Volatility  
@@ -137,86 +219,6 @@
     - Code  
 - General Peripheral Memory  
 
-## Hardware Design  
-- Specification of Chipset  
-    - Word size  
-    - number of registers  
-    - Flash/RAM sizes  
-    - Branch Prediction Support  
-    - Instruction/Data Cache Support  
-    - Floating Point Arithmetic Support    
-    - DMA Support  
-- Memory  
-    - High Capacity  
-    - Low latency  
-    - Low power  
-    - High Reliability  
-
-## Workflow  
-- Source Files (*.c/*.h)  
-- Preprocessors  
-- Prepossessed Files (*.i)  
-- Compiler  
-- Assembly Files (*.s)  
-- Assembler  
-- Object Files (*.o)  
-- Linker  
-- Relocatable Files  
-- Locator  
-- Executable 
- 
-## Tooling  
-- Software  
-    - IDE  
-    - GNU Toolchain  
-        - GNU Debugger  
-        - Binary Utilities  
-            - GNU Size  
-            - NM  
-            - Objdump  
-            - Readelf  
-        - Make  
-    - Version Control  
-        - Concurrent Versions System  
-        - Subversion  
-        - Mercurial  
-        - IBM Rational ClearCase  
-        - Git  
-    - Software requirements  
-    - Environment Information  
-    - Software Build and Release  
-    - Software review  
-    - Testing  
-    - Documentation  
-    - Defect Tracking  
-- Hardware  
-    - Selector Guide  
-    - Data Sheets  
-    - Family Technical Reference Manuals  
-    - Chip Errata  
-
-## Code Design  
-- Tools  
-    - Flow Diagram  
-    - Software Block  
-    - Component Design  
-- Standarization   
-    - Versions of C Standard  
-        - C11  
-        - C99  
-        - C89/C90  
-        - K&R C-Programming  
-- Coding Guideline  
-- Coding Standards  
-- File Structure  
-    - Header File  
-    - Implementation File  
-- Platform  
-    - Native  
-    - Cross  
-- Libraries  
-- Modules  
-
 # Embedded C  
 - Difference Between Embedded C and C  
 - Variable Declaration  
@@ -291,7 +293,7 @@
 
 ## Code Samples  
 - Configuring Peripherals  
-## Document Templates  
+## [Document Templates] (https://github.com/richanynguon/PathToHokage/blob/master/Embedded_System/coursera_es/src/Document_Templates.md)  
 - Header  
 - Implementation  
 - Make File  
@@ -302,4 +304,4 @@
 
 
 Hyperlink For Markdown
-[Link](iamlinke)
+[Link](https://github.com/richanynguon/PathToHokage/blob/master/Embedded_System/coursera_es/src/coursera_main.md)

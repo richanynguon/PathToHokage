@@ -9,37 +9,59 @@ import os
 GITHUB_URL_PREFIX = "https://github.com/richanynguon/PathToHokage/blob/master"
 TAB=4
 
-def create_index_files(index_data:object, folder_title:str, file_path: str):
+def create_index_files(index_data:dict, folder_title:str, file_path: str) -> str:
     '''
+    Params 
+    index_data contains all line data for the index file, 
+    folder_title: desired name inputted in args through command
+    file_path: of the currrent desired directory to create a folder
+    
+    Returns
+    A string to the newly created directory path
     '''
     folder_path = file_path.rpartition("/")[0] + "/" + folder_title
     index_path = folder_path + "/" + folder_title + ".md"
+
     if(os.path.isfile(folder_path) is not True):
         os.mkdir(folder_path)
         with open(index_path,"w") as index:
             for line in index_data:
                 index.write(index_data[line] + " "*2 +" \n")
+
     return folder_path
     
     
     
 
-def create_subsection_files(subsection_data: object, folder_path: str):
+def create_subsection_files(subsection_data: dict, folder_path: str) -> None:
     '''
+    Params 
+    subsection_data contains all segments and their line data, 
+    folder_path is the string of the recently created folder
+
+    Returns 
+    None
     '''
     os.mkdir(f'{folder_path}/src')
+
     for i in range(len(subsection_data)):
         file_name = subsection_data[i][0].replace("# ","")
         file_name_hyphened = file_name.replace(" ","_")
         new_file_name = f'{folder_path}/src/{file_name_hyphened}.md'
+
         with open(new_file_name,"w") as index:
              for line in subsection_data[i]:
                 index.write(subsection_data[i][line] + " "*2 +" \n")
 
 
 
-def determine_heiarchy(line_data: str):
+def determine_heiarchy(line_data: str) -> int:
     '''
+    Params 
+    line_data is from an IO Wrapper Object
+
+    Returns 
+    an int representing the depth of segment
     '''
     counter=0
     for char in line_data:
@@ -47,8 +69,13 @@ def determine_heiarchy(line_data: str):
             counter+=1
     return counter//TAB
 
-def generate_index_data(file_object: object, path_add_on: str, folder_title:str):
+def generate_index_data(file_object: object, path_add_on: str, folder_title:str) -> dict:
     '''
+    Params 
+    file_object is an IO Wrapper Object
+
+    Returns 
+    a dictionary with the a fully formatted index document
     '''
     return_dict={}
     for idx, line in enumerate(file_object):
@@ -68,8 +95,13 @@ def generate_index_data(file_object: object, path_add_on: str, folder_title:str)
         return_dict[idx] =  data 
     return return_dict
 
-def generate_dir_sect_dicts(file_object: object):
+def generate_dir_sect_dicts(file_object: object) -> dict:
     '''
+    Params 
+    file_object is an IO Wrapper Object
+
+    Returns 
+    a dictionary with a value of the amount of segments, the sections directory, and the sections titles
     '''
     sec_prefix = {
         1:"#",
@@ -107,8 +139,13 @@ def generate_dir_sect_dicts(file_object: object):
                 line_counter+=1 
     return {"segment_counter": segment_counter, "section_data":section_data, "directory_data": directory_data}
 
-def generate_subsection_data(file_object: object):
+def generate_subsection_data(file_object: object) -> dict:
     '''
+    Params 
+    file_object is an IO Wrapper Object
+
+    Returns 
+    a dictionary with a full formatted subsection
     '''
     return_dict={}
     data_dict = generate_dir_sect_dicts(file_object)
@@ -126,15 +163,18 @@ def generate_subsection_data(file_object: object):
             new_index+=1   
     return return_dict
    
-def determine_path_add_on(file_path: str):
+def determine_path_add_on(file_path: str) -> str:
     removed_dots = file_path.replace(".","")
     path = removed_dots.rpartition("/")[0]
     return path
 
-def file_parser(file_path: str, folder_title:str):
+def file_parser(file_path: str, folder_title:str) -> dict:
     '''
-    Params file_path: str, file path taking from args in command line
-    Returns a parsed object from the file at given file path
+    Params 
+    file_path: str, file path taking from args in command line
+    folder_title: arg given on command line of desired folder name
+    Returns 
+    A dict with two properties "index_data" and "subsection_data" which contains line data to write to a file
     '''
     return_dict = { 
         "index_data":{},

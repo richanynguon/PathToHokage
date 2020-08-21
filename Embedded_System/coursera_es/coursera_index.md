@@ -1,6 +1,6 @@
 # Compiled Notes from Introduction to Embedded Systems Software and Development Environments and Embedded Software and Hardware Architecture  
 
-## Systems Architecture  
+## [Systems Architecture](https://github.com/richanynguon/PathToHokage/blob/master/Embedded_System/coursera_es/src/Systems_Architecture.md)  
 - Hardware  
     - CPU  
         - ALU  
@@ -25,20 +25,17 @@
     - Libraries and Middleware  
     - Applications 
 
-## Workflow  
-- Source Files (*.c/*.h)  
+## [Workflow](https://github.com/richanynguon/PathToHokage/blob/master/Embedded_System/coursera_es/src/Workflow.md)  
 - Preprocessors  
-- Prepossessed Files (*.i)  
 - Compiler  
-- Assembly Files (*.s)  
 - Assembler  
-- Object Files (*.o)  
 - Linker  
-- Relocatable Files  
-- Locator  
 - Executable 
+- Debug
+- Tests
+- Install
  
-## Tooling  
+## [Tooling](https://github.com/richanynguon/PathToHokage/blob/master/Embedded_System/coursera_es/src/Tooling.md)  
 - Software  
     - IDE  
     - GNU Toolchain  
@@ -50,11 +47,6 @@
             - Readelf  
         - Make  
     - Version Control  
-        - Concurrent Versions System  
-        - Subversion  
-        - Mercurial  
-        - IBM Rational ClearCase  
-        - Git  
     - Software requirements  
     - Environment Information  
     - Software Build and Release  
@@ -68,7 +60,7 @@
     - Family Technical Reference Manuals  
     - Chip Errata  
 
-## Code Design  
+## [Code Design](https://github.com/richanynguon/PathToHokage/blob/master/Embedded_System/coursera_es/src/Code_Design.md)  
 - Tools  
     - Flow Diagram  
     - Software Block  
@@ -91,7 +83,7 @@
 - Modules  
 
 
-## Hardware Design  
+## [Hardware Design](https://github.com/richanynguon/PathToHokage/blob/master/Embedded_System/coursera_es/src/Hardware_Design.md) 
 - Specification of Chipset  
     - Word size  
     - number of registers  
@@ -106,120 +98,120 @@
     - Low power  
     - High Reliability  
 
-# Memory
-    - Characteristics  
-        - Capacity  
-        - Volatility  
-        - Access  
-        - Power Consumption  
-        - Latency  
-        - Durability   
-        - Transaction Size  
-    - Hierarchy Descending Latency   
-        - Registers  
-        - Cache L1, L2, L3  
-        - RAM SRAM DRAM  
-        - Flash EEPROM  
-    - Types  
-        - Code Memory  
-            - Intvecs  
-                - Vector Tables  
-            - Text  
-            - Const  
-            - Initialized segments  
-            - Dependent bootloader  
-        - Data Memory  
-        - Runtime State of Program  
-    - Data Segments  
-        - Stack  
-            - Stores  
-                - Local Variables  
-                - Input parameters  
-                - Return data  
-                - Copy of used registers  
-                - Return Address  
-                - Previous stack pointer  
-                - Copy of special function registers (interrupts)  
-            - Frame Size  
-            - Registers  
-            - Specialized Operations  
-                - Push  
-                - Pop  
-            - Stack overflow  
-        - Heap  
-            - Heap Functions  
-            - Malloc  
-            - Calloc  
-            - Realloc  
-            - Free  
-            - Issues  
-        - Data  
-        - BSS  
-    - Data Allocation  
-        - Static  
-        - Dynamic  
-    - Busses  
-        - AMBA  
-        - AHB  
-        - Private Busses  
-            - Internal   
-            - External  
-        - AHB External Core  
-            - System Bus  
-                - SRAM  
-                - High Speed Peripherals  
-                - Peripheral Bridge  
-            - Flash Bus  
-                - I-Code Bus  
-                - D-Code Bus  
-        - Peripheral Bus  
-            - Advance Peripheral Bus  
-    - Memory Alignment  
-        - Packed  
-        - Aligned  
-        - Endianness  
-            - Little Endian  
-            - Big Endian  
+## [Memory](https://github.com/richanynguon/PathToHokage/blob/master/Embedded_System/coursera_es/src/Memory.md)
+- Characteristics  
+    - Capacity  
+    - Volatility  
+    - Access  
+    - Power Consumption  
+    - Latency  
+    - Durability   
+    - Transaction Size  
+- Hierarchy Descending Latency   
     - Registers  
-        - Internal Core CPU  
-        - General Purpose Registers  
-        - Special Registers  
-        - Program Status Registers  
-            - APSR  
-            - IPSR  
-            - EPSR  
-        - Exception Mask Registers  
-            - PRIMASK  
-            - FAULTMASK  
-            - BASEPRI  
-        - Control Registers  
-            - FPCA  
-            - SPSEL  
-            - NPRIV  
+    - Cache L1, L2, L3  
+    - RAM SRAM DRAM  
+    - Flash EEPROM  
+- Types  
+    - Code Memory  
+        - Intvecs  
+            - Vector Tables  
+        - Text  
+        - Const  
+        - Initialized segments  
+        - Dependent bootloader  
+    - Data Memory  
+    - Runtime State of Program  
+- Data Segments  
+    - Stack  
+        - Stores  
+            - Local Variables  
+            - Input parameters  
+            - Return data  
+            - Copy of used registers  
+            - Return Address  
+            - Previous stack pointer  
+            - Copy of special function registers (interrupts)  
+        - Frame Size  
+        - Registers  
+        - Specialized Operations  
+            - Push  
+            - Pop  
+        - Stack overflow  
+    - Heap  
+        - Heap Functions  
+        - Malloc  
+        - Calloc  
+        - Realloc  
+        - Free  
+        - Issues  
+    - Data  
+    - BSS  
+- Data Allocation  
+    - Static  
+    - Dynamic  
+- Busses  
+    - AMBA  
+    - AHB  
+    - Private Busses  
+        - Internal   
+        - External  
+    - AHB External Core  
+        - System Bus  
+            - SRAM  
+            - High Speed Peripherals  
+            - Peripheral Bridge  
+        - Flash Bus  
+            - I-Code Bus  
+            - D-Code Bus  
+    - Peripheral Bus  
+        - Advance Peripheral Bus  
+- Memory Alignment  
+    - Packed  
+    - Aligned  
+    - Endianness  
+        - Little Endian  
+        - Big Endian  
+- Registers  
+    - Internal Core CPU  
+    - General Purpose Registers  
+    - Special Registers  
+    - Program Status Registers  
+        - APSR  
+        - IPSR  
+        - EPSR  
+    - Exception Mask Registers  
+        - PRIMASK  
+        - FAULTMASK  
+        - BASEPRI  
+    - Control Registers  
+        - FPCA  
+        - SPSEL  
+        - NPRIV  
     - Private Peripherals  
-    - Internal Private Peripherals  
-    - External Private Peripherals  
-    - System Specific  
-        - System Control Block SCB  
-            - Processor Debug Control  
-            - FPU  
-        - NVIC   
-            - MPU  
-        - SysTick Timer  
-            - Misc System Control Registers  
-    - FPB  
-    - DWT  
-    - ITM  
-    - ETM  
+        - Internal Private Peripherals  
+        - External Private Peripherals  
+        - System Specific  
+            - System Control Block SCB  
+                - Processor Debug Control  
+                - FPU  
+            - NVIC   
+                - MPU  
+            - SysTick Timer  
+                - Misc System Control Registers  
+        - FPB  
+        - DWT  
+        - ITM  
+        - ETM  
     - Peripherals  
         - Peripheral Bit Band Alias  
     - SRAM  
         - SRAM  
         - SRAM Bit Band Alias  
     - Code  
-- General Peripheral Memory  
+    - General Peripheral Memory  
 
-# Embedded C  
+## [Embedded C](https://github.com/richanynguon/PathToHokage/blob/master/Embedded_System/coursera_es/src/Embedded_C.md)  
 - Difference Between Embedded C and C  
 - Variable Declaration  
 - Data Types  
@@ -291,17 +283,15 @@
         - Free  
 - Inline and Static Keyword  
 
-## Code Samples  
+## [Code Samples](https://github.com/richanynguon/PathToHokage/blob/master/Embedded_System/coursera_es/src/Code_Samples.md)  
 - Configuring Peripherals  
-## [Document Templates] (https://github.com/richanynguon/PathToHokage/blob/master/Embedded_System/coursera_es/src/Document_Templates.md)  
+## [Document Templates](https://github.com/richanynguon/PathToHokage/blob/master/Embedded_System/coursera_es/src/Document_Templates.md)  
 - Header  
 - Implementation  
 - Make File  
 - Source File  
 - Register Definition File  
-## MSP432 Specific  
-## Quick Commands  
+## [MSP432 Specific](https://github.com/richanynguon/PathToHokage/blob/master/Embedded_System/coursera_es/src/MSP432_Specific.md)   
+## [Quick Commands](https://github.com/richanynguon/PathToHokage/blob/master/Embedded_System/coursera_es/src/Quick_Commands.md)   
 
-
-Hyperlink For Markdown
-[Link](https://github.com/richanynguon/PathToHokage/blob/master/Embedded_System/coursera_es/src/coursera_main.md)
+[//]: # ( # ## #### ######)

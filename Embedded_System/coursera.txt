@@ -1,0 +1,286 @@
+Coursera Notes
+Systems Architecture
+    Hardware  
+        CPU  
+            ALU  
+            Registers  
+            Control  
+            Interrupt Handler  
+            Cache  
+        Peripherals  
+        GPIO  
+        SRAM  
+        Flash  
+        I/O Port  
+            GIO  
+            IO  
+            GPIO  
+    Software
+        Hardware Abstraction Layer  
+            Drivers  
+            Bare Metal Firmware  
+        Bootloader  
+        Operating Systems  
+        Libraries and Middleware  
+        Applications 
+Workflow  
+    Preprocessors  
+    Compiler  
+    Assembler  
+    Linker  
+    Executable 
+    Debug
+    Tests
+    Install
+Tooling
+    Software  
+        IDE  
+        GNU Toolchain  
+            GNU Debugger  
+            Binary Utilities  
+                GNU Size  
+                NM  
+                Objdump  
+                Readelf  
+            Make  
+        Version Control  
+        Software requirements  
+        Environment Information  
+        Software Build and Release  
+        Software review  
+        Testing  
+        Documentation  
+        Defect Tracking  
+    Hardware  
+        Selector Guide  
+        Data Sheets  
+        Family Technical Reference Manuals  
+        Chip Errata  
+Code Design  
+    Tools  
+        Flow Diagram  
+        Software Block  
+        Component Design  
+    Standarization   
+        Versions of C Standard  
+            C11  
+            C99  
+            C89/C90  
+            K&R C-Programming  
+    Coding Guideline  
+    Coding Standards  
+    File Structure  
+        Header File  
+        Implementation File  
+    Platform  
+        Native  
+        Cross  
+    Libraries  
+    Modules  
+Hardware Design
+    Specification of Chipset  
+        Word size  
+        number of registers  
+        Flash/RAM sizes  
+        Branch Prediction Support  
+        Instruction/Data Cache Support  
+        Floating Point Arithmetic Support    
+        DMA Support  
+    Memory  
+        High Capacity  
+        Low latency  
+        Low power  
+        High Reliability  
+Memory
+    Characteristics  
+        Capacity  
+        Volatility  
+        Access  
+        Power Consumption  
+        Latency  
+        Durability   
+        Transaction Size  
+    Hierarchy Descending Latency   
+        Registers  
+        Cache L1, L2, L3  
+        RAM SRAM DRAM  
+        Flash EEPROM  
+    Types  
+        Code Memory  
+            Intvecs  
+                Vector Tables  
+            Text  
+            Const  
+            Initialized segments  
+            Dependent bootloader  
+        Data Memory  
+        Runtime State of Program  
+    Data Segments  
+        Stack  
+            Stores  
+                Local Variables  
+                Input parameters  
+                Return data  
+                Copy of used registers  
+                Return Address  
+                Previous stack pointer  
+                Copy of special function registers (interrupts)  
+            Frame Size  
+            Registers  
+            Specialized Operations  
+                Push  
+                Pop  
+            Stack overflow  
+        Heap  
+            Heap Functions  
+            Malloc  
+            Calloc  
+            Realloc  
+            Free  
+            Issues  
+        Data  
+        BSS  
+    Data Allocation  
+        Static  
+        Dynamic  
+    Busses  
+        AMBA  
+        AHB  
+        Private Busses  
+            Internal   
+            External  
+        AHB External Core  
+            System Bus  
+                SRAM  
+                High Speed Peripherals  
+                Peripheral Bridge  
+            Flash Bus  
+                I-Code Bus  
+                D-Code Bus  
+        Peripheral Bus  
+            Advance Peripheral Bus  
+    Memory Alignment  
+        Packed  
+        Aligned  
+        Endianness  
+            Little Endian  
+            Big Endian  
+    Registers  
+        Internal Core CPU  
+        General Purpose Registers  
+        Special Registers  
+        Program Status Registers  
+            APSR  
+            IPSR  
+            EPSR  
+        Exception Mask Registers  
+            PRIMASK  
+            FAULTMASK  
+            BASEPRI  
+        Control Registers  
+            FPCA  
+            SPSEL  
+            NPRIV  
+        Private Peripherals  
+            Internal Private Peripherals  
+            External Private Peripherals  
+            System Specific  
+                System Control Block SCB  
+                    Processor Debug Control  
+                    FPU  
+                NVIC   
+                    MPU  
+                SysTick Timer  
+                    Misc System Control Registers  
+            FPB  
+            DWT  
+            ITM  
+            ETM  
+        Peripherals  
+            Peripheral Bit Band Alias  
+        SRAM  
+            SRAM  
+            SRAM Bit Band Alias  
+        Code  
+        General Peripheral Memory  
+Embedded C
+    Difference Between Embedded C and C  
+    Variable Declaration  
+    Data Types  
+        Integers  
+        Floating Point  
+        Enumerated  
+        Derived  
+        Void  
+        Dynamic  
+    Type Modifiers  
+        Short  
+        Long  
+        Unsigned  
+        Signed  
+    Type Qualifiers  
+    Storage Classes  
+    Standard  
+        Integer Sizes  
+        Fast Types  
+        Least Types  
+    Bit Manipulation  
+        Bit shift left  
+        Bit shift right  
+        And  
+        Or  
+        Xor  
+        Complement  
+    Pointers  
+        Void  
+        Double Pointer  
+        Restrict  
+        Function  
+    Attributes  
+        Memory Alignment  
+            Aligned  
+            Packed  
+        GCC  
+            Always inline  
+    Typedef  
+    Structures  
+    Enumerations  
+    Unions  
+    Bit Fields  
+    Encapsulation  
+        Composite Data Structure  
+        Abstract Data Structure  
+    Preprocessor Directives  
+        #define, #undef  
+        #ifndef, #ifdef, #endif  
+        #include  
+        #warning, #error  
+        #pragma  
+        Macro  
+            Macro Issues  
+            Port Macros  
+            Bit Band Macros  
+    Abstract Data Structures  
+        LIFO  
+        FIFO  
+        Linked List  
+    Memory Manipulation  
+        Directly Dereferencing Memory  
+            Pointer Casting  
+            Typedef struct  
+        Heap Data Manipulation  
+            Malloc  
+            Calloc  
+            Realloc  
+            Free  
+    Inline and Static Keyword  
+Code Samples
+    Configuring Peripherals  
+Document Templates
+    Header  
+    Implementation  
+    Make File  
+    Source File  
+    Register Definition File  
+MSP432 Specific 
+Quick Commands

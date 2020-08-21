@@ -67,6 +67,9 @@ def determine_heiarchy(line_data: str) -> int:
     for char in line_data:
         if char == " ":
             counter+=1
+        else:
+            break
+
     return counter//TAB
 
 def generate_index_data(file_object: object, path_add_on: str, folder_title:str) -> dict:

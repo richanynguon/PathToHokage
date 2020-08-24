@@ -43,6 +43,7 @@ def create_subsection_files(subsection_data: dict, folder_path: str) -> None:
     None
     '''
     os.mkdir(f'{folder_path}/src')
+    os.mkdir(f'{folder_path}/assets')
 
     for i in range(len(subsection_data)):
         file_name = subsection_data[i][0].replace("# ","")
@@ -204,6 +205,7 @@ def main():
     Returns newly created folder with a similar directory heiarchy
     ------------------------------------------
     |   folder_title                         |
+    |       ->assets                         |
     |       ->src                            |
     |           ->subsection.md              |             
     |           ->subsection.md              |

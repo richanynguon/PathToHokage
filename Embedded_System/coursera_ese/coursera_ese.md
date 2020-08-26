@@ -282,5 +282,4 @@
 - Make File   
 - Source File   
 - Register Definition File   
-## [MSP432 Specific](https://github.com/richanynguon/PathToHokage/blob/master/Embedded_System/coursera_ese/src/MSP432_Specific.md)   
 ## [Quick Commands](https://github.com/richanynguon/PathToHokage/blob/master/Embedded_System/coursera_ese/src/Quick_Commands.md)   

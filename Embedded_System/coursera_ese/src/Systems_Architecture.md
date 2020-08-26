@@ -1,5 +1,6 @@
 # Systems Architecture   
-- [Hardware](#Hardware)   
+- [Hardware](#Hardware)
+    - [Platform](#Platform)
     - [CPU](#CPU)   
         - [ALU](#ALU)   
         - [Registers](#Registers)   
@@ -16,6 +17,7 @@
         - [DAC](#DAC)  
         - [Clock](#Clock)  
 - [Software](#Software)   
+    - [Instruction Size](#Instruction-Size)
     - [Hardware Abstraction Layer](#Hardware-Abstraction-Layer)   
         - [Drivers](#Drivers)   
         - [Bare Metal Firmware](#Bare-Metal-Firmware)   
@@ -28,6 +30,10 @@
 MSP432 System Architecture
 ![MSP4432 System](../assets/ti4-1.png)  
 MSP432 block diagram
+
+## Platform
+---
+The platform is the underlying integrated circuit (IC) and the components surrounding the CPU (Peripherals). This is a relative term but could also refer to an OS or circuit board with an IC. This m,ay affect the address space of the micro controller.
 ## CPU  
 ---   
 Central Processing Unit (CPU) is the unit that executes instructions that make a computer program through i/o operations.  
@@ -38,6 +44,8 @@ Operation
 - Execute
 
 These intructions helps the CPU process Arithmetic, Logic and Data Transfer operations.
+
+The underlying integrated circuit I
 
 #### ALU
 ---
@@ -162,9 +170,39 @@ Timers and counters provide operations of time delay and counting external event
 # Software  
 ![Software Layer](../assets/software_layers.jpg)  
 Software Layer
+
+## Instruction Size
+
+- Instruction - Fundamental unit of work operation
+	-  Arithmetic
+	- Logical
+	- Program Flow Control
+	- Load/Store
+- Word - Fundamental operand size for each operation
+- General purpose registers in CPU will be the size of the word
+- Cortex-M processors has general and special purpose CPU Core registers
+	- R0-R12 General Purpose
+	- R13-R15 Reserved Roles
+	- Program Status Registers
+	- Exception Mask Registers
+	- Control Register
+
+Instruction Sizes
+- Instruction size can vary
+	- Arm Instruction Set ARMv6-M -> 16 Bit and 32 Bit
+	- Thumb-2 Instruction Set -> 16 Bit
+		- Thumb architecture is the size of instruction can limit the number of supported operations and different features within each individual operations.
+- There are a lot of busses in a microcontroller 
+	- Internal systems busses ARM AHB
+	- External Peripheral Busses ARM APB
+- Bus is at least the size of the instruction
+
+
 ## Hardware Abstraction Layer  
 ---   
- Programming that allows a computer OS to interact with a hardware device at a general or abstract level rather than a detailed hardware level.
+ Programming that allows a computer OS to interact with a hardware device at a general or abstract level rather than a detailed hardware level. Deigned to work as a module component with a well defined interface. Enables software above HAL to become platform independent and portable across platforms
+
+
 #### Drivers  
 ---   
 A program that operates or controls a particular type of device.
@@ -179,7 +217,7 @@ A boot program is software that loads into working memory of a hardware start up
    
 ## Operating Systems  
 ---   
-System software that manages computer
+System software that manages computer through resources and scheduling. It abstracts high commands from low level commands.
 ## Libraries and Middleware  
 ---   
 Software that provides services to software applications beyond those available from the operating system.

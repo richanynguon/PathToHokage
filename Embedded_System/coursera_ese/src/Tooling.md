@@ -351,6 +351,8 @@ Platform File that provides interface to peripheral memory by specifying
 - Access methods
 - Defines for bit fields and bit masks
 
+To find register address to your microcontroller you must checkout your data sheet.
+
 ## Linker File 
 ---
 The compiled memory sections of a compiled executable will be relocated by referencing a symbol name. Symbol names are referred to as memory sub segments.

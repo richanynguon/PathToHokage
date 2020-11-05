@@ -382,6 +382,91 @@ struct Array* Merge(struct Array *arr1, struct Array *arr2)
 
     return arr3;
 }
+// Merges set in order
+struct Array* Union(struct Array *arr1,struct Array *arr2)
+{
+    int i,j,k;
+    i=j=k=0;
+
+    struct Array *arr3=(struct Array *)malloc(sizeof(struct Array));
+
+    while(i<arr1->length && j<arr2->length)
+    {
+        if(arr1->A[i]<arr2->A[j])
+            arr3->A[k++]=arr1->A[i++];
+        else if(arr2->A[j]<arr1->A[i])
+            arr3->A[k++]=arr2->A[j++];
+        else
+        {
+            arr3->A[k++]=arr1->A[i++];
+            j++;
+        }
+    }
+    for(;i<arr1->length;i++)
+        arr3->A[k++]=arr1->A[i];
+    for(;j<arr2->length;j++)
+        arr3->A[k++]=arr2->A[j];
+
+    arr3->length=k;
+    arr3->size=10;
+
+    return arr3;
+}
+// common items
+struct Array* Intersection(struct Array *arr1,struct Array *arr2)
+{
+    int i,j,k;
+    i=j=k=0;
+
+    struct Array *arr3=(struct Array *)malloc(sizeof(struct Array));
+
+    while(i<arr1->length && j<arr2->length)
+    {
+        if(arr1->A[i]<arr2->A[j])
+            i++;
+        else if(arr2->A[j]<arr1->A[i])
+            j++;
+        else if(arr1->A[i]==arr2->A[j])
+        {
+            arr3->A[k++]=arr1->A[i++];
+            j++;
+        }
+    }
+
+    arr3->length=k;
+    arr3->size=10;
+
+    return arr3;
+}
+// items that are different
+struct Array* Difference(struct Array *arr1,struct Array *arr2)
+{
+    int i,j,k;
+    i=j=k=0;
+
+    struct Array *arr3=(struct Array *)malloc(sizeof(struct Array));
+
+    while(i<arr1->length && j<arr2->length)
+    {
+        if(arr1->A[i]<arr2->A[j])
+            arr3->A[k++]=arr1->A[i++];
+        else if(arr2->A[j]<arr1->A[i])
+            j++;
+        else
+        {
+            i++;
+            j++;
+        }
+    }
+    for(;i<arr1->length;i++)
+        arr3->A[k++]=arr1->A[i];
+
+    arr3->length=k;
+    arr3->size=10;
+
+    return arr3;
+}
+
 
 
 int arrayInitalizationAndManipulation()
@@ -408,3 +493,472 @@ int arrayInitalizationAndManipulation()
     printf("%d\n", Delete(&arr,4));
     printf("%d\n", LinearSearch(&arr, 6));
 }
+
+int menuDriver()
+{
+    struct Array arr1;
+    int ch;
+    int x,index;
+
+    printf("Enter Size of Array");
+    scanf("%d",&arr1.size);
+    arr1.A=(int *)malloc(arr1.size*sizeof(int));
+    arr1.length=0;
+    do
+    {
+        printf("\n\nMenu\n");
+        printf("1. Insert\n");
+        printf("2. Delete\n");
+        printf("3. Search\n");
+        printf("4. Sum\n");
+        printf("5. Display\n");
+        printf("6.Exit\n");
+
+        printf("enter you choice ");
+        scanf("%d",&ch);
+
+        switch(ch)
+        {
+            case 1: printf("Enter an element and index");
+                scanf("%d%d",&x,&index);
+                Insert(&arr1,index,x);
+                break;
+            case 2: printf("Enter index ");
+                scanf("%d",&index);
+                x=Delete(&arr1,index);
+                printf("Deleted Element is %d\n",x);
+                break;
+            case 3:printf("Enter element to search ");
+                scanf("%d",&x);
+                index=LinearSearch(&arr1,x);
+                printf("Element index %d",index);
+                break;
+            case 4:printf("Sum is %d\n",Sum(&arr1));
+                break;
+            case 5:Display(arr1);
+        }
+    }while(ch<6);
+    return 0;
+}
+
+/*
+CPP
+
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+
+using namespace std;
+
+template<class T>
+
+class Array
+{
+private:
+    T *A;
+    int size;
+    int length;
+    void swap(int *x, int *y);
+public:
+    Array()
+    {
+        size=10;
+        legnth=0;
+        A=new T[size];
+    }
+    Array(int sz)
+    {
+        size=sz;
+        legnth=0;
+        A=new T[size];
+    }
+    ~Array()
+    {
+        delete []A;
+    }
+
+    void Display();
+    void Append(int x);
+    void Insert(int index, T x);
+    T Delete(int index);
+    int LinearSearch(int key);
+    int BinarySearch(int key);
+    int Get(int index);
+    void Set(int index, T x);
+    int Max();
+    int Min();
+    int Sum();
+    float Avg();
+    void Reverse();
+    void Reverse2();
+    void InsertSort(int x);
+    int isSorted();
+    void Rearrange();
+    Array* Merge(Array *arr2);
+    Array* Union(Array *arr2);
+    Array* Intersection(Array *arr2);
+    Array* Difference(Array *arr2);
+
+};
+
+void Array::Display(){
+    int i;
+    for(i=0; i<length;i++)
+        cout<<A[i]<< " ";
+    cout<<endl;
+}
+
+void Array::AddAppend(int x)
+{
+    if(length<size)
+        A[length++]=x;
+    return x;
+}
+
+template<class T>
+void Array<T>::Insert(int index, T x)
+{   
+    int i;
+    if(index>=0 && index <=length)
+    {
+        for(i=length; i>index; i--)
+            A[i]=A[i-1];
+        A[index]=x;
+        length++;
+    }
+
+}
+template<class T>
+T Array<T>::Delete(int index)
+{
+    T x=0;
+    int i;
+    if(index>=0 && index<length)
+    {
+        x=A[index];
+        for(i=index; i<length-1;i++)
+            A[i]=A[i+1];
+        length--;
+        return x;
+    }
+    return 0;
+}
+
+
+void Array::swap(int *x, int*y)
+{
+    int temp;
+    temp = *x;
+    *x=*y;
+    *y=temp;
+}
+
+int Array::LinearSearch(int key)
+{
+    int i; 
+    for(i=0; i<length; i++)
+    {
+        if(key==A[i])
+            swap(&A[i], &A[0]);
+            return i;
+    }
+    return -1;
+    
+}
+
+int Array::BinarySearchIterative(int key)
+{
+    int l, mid, h;
+    l=0;
+    h=length-1;
+    while(l<=h)
+    {
+        mid=(l+h)/2;
+        if(key==A[mid])
+            return mid;
+        else if (key<A[mid])
+            h=mid-1;
+        else
+            l=mid+1;    
+    }
+    return -1;
+}
+
+
+int Array::Get(int index)
+{
+    if(index>=0 && index<length)
+        return A[index];
+    return -1;
+}
+
+int Array::Set(int index, int x)
+{
+    if(index>=0&&index<length)
+        A[index] = x;
+    return -1;
+}
+
+int Array::Max()
+{
+    int max = A[0];
+    int i;
+    for(i=1; i<length; i++)
+    {
+        if(A[i]>max)
+            max=A[i];
+    }
+    return max;
+}
+
+int Array::Min()
+{
+    int min=A[0];
+    int i;
+    for(i=1; i<length;i++)
+    {
+        if(A[i]<min)
+            min=A[i];
+    }
+    return min;
+}
+
+float Array::Avg()
+{
+    return (float)Sum(arr)/length;
+}
+
+int Array::Sum()
+{
+    int s=0;
+    int i;
+    for(i=0; i<length; i++)
+        s+=A[i];
+}
+
+int Array::Reverse()
+{
+    int *B;
+    int i, j;
+    B=(int *)malloc(length*sizeof(int));
+    for(i=length-1, j=0; i>=0;i--,j++)
+        B[j]=A[i];
+    for(i=0;i>length;i++)
+        A[i]=B[i];
+}
+
+int Array::Reverse2()
+{
+    int i,j;
+    for(i=0,j=length-1;i<j;i++,j--)
+    {
+        swap(&A[i],&A[j]);
+    }
+}
+int Array::isSorted(){
+    int i;
+    for(i=0;i<length-1;i++)
+    {
+        if(A[i]>A[i+1])
+        return 0;
+    }
+    return 1;
+}
+void Array::InsertSort(int x)
+{
+    int i=length-1;
+    if(length==size)
+        return;
+    while(i>=0 && A[i]>x)
+    {
+        A[i+1]=A[i];
+        i--;
+    }
+    A[i+1]=x;
+    length++;
+
+}
+
+void Array::Rearrange()
+{
+    int i,j; 
+    i=0;
+    j=length-1;
+    while(i<j)
+    {
+        while(A[i]<0)i++;
+        while(A[i]>=0)j++;
+        if(i<j)swap(&A[i],&[j]);
+    }
+}
+
+Array* Array::Merge(Array arr2)
+{
+    int i, j, k;
+    i=j=k=0;
+    Array *arr3 = new Array(length+arr2.length)
+    while(i<length && j<arr2.length)
+    {
+        if (A[i]<arr2.A[j])
+            arr3->A[k++]=A[i++];
+        else
+             arr3->A[k++]=arr2.A[j++]; 
+    }
+    for(;i<length;i++)
+        arr3->A[k++]=A[i++];
+    for(;j<arr2.length;j++)
+        arr3->A[k++]=arr2.A[j++]; 
+    arr3->length=length+arr2.length;
+    arr3->size=10;
+
+    return arr3;
+}
+
+Array* Array::Union(Array arr2)
+{
+    int i,j,k;
+    i=j=k=0;
+
+    Array *arr3=new Array(length)
+
+    while(i<length && j<arr2.length)
+    {
+        if(A[i]<arr2.A[j])
+            arr3->A[k++]=A[i++];
+        else if(arr2.A[j]<A[i])
+            arr3->A[k++]=arr2.A[j++];
+        else
+        {
+            arr3->A[k++]=A[i++];
+            j++;
+        }
+    }
+    for(;i<length;i++)
+        arr3->A[k++]=A[i];
+    for(;j<arr2.length;j++)
+        arr3->A[k++]=arr2.A[j];
+
+    arr3->length=k;
+    arr3->size=10;
+
+    return arr3;
+}
+
+Array* Array::Intersection(Array arr2)
+{
+    int i,j,k;
+    i=j=k=0;
+
+    Array *arr3=new Array(length)
+
+    while(i<length && j<arr2.length)
+    {
+        if(A[i]<arr2.A[j])
+            i++;
+        else if(arr2.A[j]<A[i])
+            j++;
+        else if(A[i]==arr2.A[j])
+        {
+            arr3->A[k++]=A[i++];
+            j++;
+        }
+    }
+
+    arr3->length=k;
+    arr3->size=10;
+
+    return arr3;
+}
+
+Array* Array::Difference(Array arr2)
+{
+    int i,j,k;
+    i=j=k=0;
+
+    Array *arr3=new Array(length)
+
+    while(i<length && j<arr2.length)
+    {
+        if(A[i]<arr2.A[j])
+            arr3->A[k++]=A[i++];
+        else if(arr2.A[j]<A[i])
+            j++;
+        else
+        {
+            i++;
+            j++;
+        }
+    }
+    for(;i<length;i++)
+        arr3->A[k++]=A[i];
+
+    arr3->length=k;
+    arr3->size=10;
+
+    return arr3;
+}
+
+Multiple insertion operations (<<) may be chained in a single statement:
+cout << "This " << " is a " << "single C++ statement";
+Alternatively, the endl manipulator can also be used to break lines. For example:
+
+1 cout << "First sentence." << endl;
+2 cout << "Second sentence." << endl;
+
+
+
+
+int menuDriver()
+{
+    Array *arr1;
+    int ch;
+    int x,index;
+
+    cout<< "Enter Size of Array" << endl;
+    int sz;
+    cin >> sz;
+    arr1=new Array(sz)
+
+    do
+    {
+        cout << "\n\nMenu\n" << endl;
+        cout << "1. Insert\n" << endl;
+        cout << "2. Delete\n" << endl;
+        cout << "3. Search\n" << endl;
+        cout << "4. Sum\n" << endl;
+        cout << "5. Display\n" << endl;
+        cout << "6.Exit\n" << endl;
+
+        cout << "enter you choice " << endl;
+        int ch;
+        cin >> ch;
+
+        switch(ch)
+        {
+            case 1: cout << "Enter an element and index" << endl;
+                int x, index;
+                cin >> x;
+                cin >> index;
+                arr1.Insert(index,x);
+                break;
+            case 2: cout << "Enter index " << endl;
+                int index;
+                cin >> index;
+                x=arr1.Delete(index);
+                cout << "Deleted Element is" << x << endl;
+                break;
+            case 3:cout << "Enter element to search " << endl;
+                int x;
+                cin >> x;
+                index=arr1.LinearSearch(x);
+                cout << "Element index" << index << endl;
+                break;
+            case 4:cout << "Sum is %d\n",Sum());
+                break;
+            case 5:arr1.Display();
+        }
+    }while(ch<6);
+    return 0;
+}
+
+*/

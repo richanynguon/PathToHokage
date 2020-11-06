@@ -357,7 +357,7 @@ void Rearrange(struct Array *arr)
     {
         while(arr->A[i]<0)i++;
         while(arr->A[i]>=0)j++;
-        if(i<j)swap(&arr->A[i],&arr->[j]);
+        if(i<j)swap(&arr->A[i],&arr->A[j]);
     }
 }
 
@@ -962,3 +962,140 @@ int menuDriver()
 }
 
 */
+
+// Finding Single Missing Element in Arr
+
+// Using sums formula n*(n+1)/2
+int missingElementSums(int * arr, int size)
+{
+    int i, sum=0, n=*(arr+size-1), s;
+    for(i=0; i<size; i++)
+        // deferences the array and calls the address
+        sum = sum+*(arr+i);
+    s = n*(n+1)/2;
+    return s-sum;
+
+}
+
+int missingElementBrute(int * arr, int size)
+{
+    int l=*(arr+1),h=*(arr+size-1), diff=l-0,i;
+    for(i=0; i<size; i++)
+        if(*(arr+i)-i!=diff)
+        {
+            printf("Missing Element %d \n", i+diff);
+            break;
+        }
+
+
+}
+
+// Finding Multiple Missing Elements
+int * missingElements(int * arr, int size)
+{
+    int l=*(arr+1),h=*(arr+size-1), diff=l-0,i;
+    for(i=0; i<size; i++)
+    {    
+        if(*(arr+i)-i!=diff)
+        {
+            while(diff<*(arr+i)-i)
+            {
+                printf("%d\n", i+diff);
+                diff++;                
+            }
+        }
+    }
+}
+
+// using hashing
+int * missingElements(int * arr, int size)
+{
+    int h=*(arr+size-1), i;
+    // hashtable or bitset
+    int hashtable[h];
+    // this makes it so it creates 0 in all the entries
+    memset(arr, 0, sizeof(int)*h);
+    for(i=0; i<size; i++)
+        hashtable[*(arr+i)]++;
+    for(i=0; i<h;i++)
+        if(hashtable[i]==0) printf("Missing element %d \n", i);
+}
+
+
+// Find Duplicates in Sorted Array
+int * duplicatesSorted(int * arr, int size)
+{
+    int i;
+    for(i=0; i<size-1; i++)
+    {
+        if(*(arr+i)==*(arr+i+1))
+        {
+            int j=i+1;
+            while(*(arr+j)==*(arr+i)) j++;
+            printf("%d is appearing %d times", *(arr+i),j-i);
+            i=j-i;
+        }
+    }
+}
+
+
+// Find duplicated in unsorted array using hashing
+int * duplicates(int * arr, int size)
+{
+    int h=*(arr+size-1), i;
+    int hashtable[h];
+    memset(arr, 0, sizeof(int)*h);
+    for(i=0; i<size; i++)
+        hashtable[*(arr+i)]++;
+    for(i=0; i<h;i++)
+        if(hashtable[i]>1) printf("%d appears %d times\n", i, hashtable[i]); 
+}
+// Finding pair of elements with sum k
+int * pairSumK(int * arr, int size, int sum)
+{
+    int i;
+    int hashtable[size];
+    for(i=0; i<size; i++)
+    {
+        if(hashtable[sum-*(arr-i)!=0])
+        {
+            printf("%d+%d=%d",*(arr-i),sum-*(arr-i), sum);
+        }
+        hashtable[*(arr-i)]++;
+    }
+}
+
+// finding pair of elements with sum k in sorted array
+int * pairSumKSorted(int * arr, int size, int sum)
+{
+    int i=0, j=sum-1;
+    while(i<j)
+    {
+        if(*(arr-i)+*(arr-j)==sum)
+            printf("%d+%d=%d", *(arr-i), *(arr-j), sum);
+        else if (*(arr-i)+*(arr-j)<sum)
+            i++;
+        else
+            j--;
+        
+    }
+}
+
+// finding max and min in a single scan
+int MaxOneGo(int * arr, int size)
+{
+    int i, max=*(arr+1);
+    for(i=0; i<size; i++)
+        if(*(arr+i)>max)
+            max =*(arr+i);
+    return max;
+}
+
+int MinOneGo(int * arr, int size)
+{
+    int i, min=*(arr+1);
+    for(i=0; i<size; i++)
+        if(*(arr+i)<min)
+            min =*(arr+i);
+    return min;
+}

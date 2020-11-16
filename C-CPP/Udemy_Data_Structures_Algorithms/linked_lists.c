@@ -8,8 +8,8 @@ thing will be stored
 #include <stdlib.h>
 struct Node
 {
- int data;
- struct Node *next;
+    int data;
+    struct Node *next;
 }*first=NULL;
 // What does this do
 
@@ -513,19 +513,17 @@ use it like a hash table - you can easily add two sparse matrices
 
 */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include <math.h>
-struct Node
+struct PolyNode
 {
     int coeff;
     int exp;
-    struct Node *next;
+    struct PolyNode *next;
 }*poly=NULL;
 
 void creatPoly()
 {
-    struct Node *t,*last=NULL;
+    struct PolyNode *t,*last=NULL;
     int num,i;
 
     printf("Enter number of terms");
@@ -534,7 +532,7 @@ void creatPoly()
 
     for(i=0;i<num;i++)
     {
-        t=(struct Node *)malloc(sizeof(struct Node));
+        t=(struct PolyNode *)malloc(sizeof(struct PolyNode));
         scanf("%d%d",&t->coeff,&t->exp);
         t->next=NULL;
         if(poly==NULL)
@@ -548,7 +546,7 @@ void creatPoly()
         }
     }
 }
-void Display(struct Node *p)
+void Display(struct PolyNode *p)
 {
     while(p)
     {
@@ -557,7 +555,7 @@ void Display(struct Node *p)
     }
     printf("\n");
 }
-long Eval(struct Node *p, int x)
+long Eval(struct PolyNode *p, int x)
 {
     long val=0;
 

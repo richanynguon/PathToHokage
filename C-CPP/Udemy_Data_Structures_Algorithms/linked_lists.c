@@ -508,7 +508,9 @@ int main()
 /*
 sparse matrix and polynomial using linked lists
 
+sparse matrix
 use it like a hash table - you can easily add two sparse matrices
+in each index of arr (col val) store a node where it stores the row and ele value
 
 
 */

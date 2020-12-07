@@ -116,3 +116,10 @@ int Search(int H[],int key)
     return (index+i)%SIZE;
 }
 
+/*
+
+size of hashtable is a prime number when using modular hashing
+midsquare: ex: lets say key =11, 11^2 = 121 take middle number -> 2 and thats is the key
+folding: split digit into even part for ex:
+123346 -> 12,33,46 and sum them to be a key -> 91 then 9+1 -> 10
+*/
